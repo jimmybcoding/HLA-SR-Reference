@@ -1,0 +1,129 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    text-decoration: none;
+    color: hotpink;
+    background-color: black;
+    font-size: 30px;
+}
+
+.grid-container {
+    height: 100vh;
+    display: grid;
+    grid-template-columns: 10vw auto;
+    transition: 300ms;
+}
+
+.grid-container:has(.grid-left:hover) {
+    grid-template-columns: 30vw auto;
+}
+
+.grid-left {
+    border: 5px solid hotpink;
+    background: linear-gradient(rgb(0, 174, 255), rgb(243, 54, 101));
+    text-align: center;
+    color: white;
+}
+
+.grid-right {
+    text-align: center;
+    background-image: url("./images/DNA.jpg");
+    background-size: cover;
+    color: antiquewhite;
+    opacity: 0.7;
+}
+
+.sample-type {
+    font-size: 20px;
+}
+
+.sample-btn-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20vh;
+}
+
+.sample-btn {
+  padding: 0.6em 2em;
+  border: none;
+  outline: none;
+  color: rgb(255, 255, 255);
+  background: #111;
+  cursor: pointer;
+  position: relative;
+  z-index: 0;
+  border-radius: 10px;
+
+}
+
+.sample-btn:before {
+  content: "";
+  background: linear-gradient(
+    45deg,
+    #ff0000,
+    #ff7300,
+    #fffb00,
+    #48ff00,
+    #00ffd5,
+    #002bff,
+    #7a00ff,
+    #ff00c8,
+    #ff0000
+  );
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  background-size: 400%;
+  z-index: -1;
+  filter: blur(5px);
+  -webkit-filter: blur(5px);
+  width: calc(100% + 4px);
+  height: calc(100% + 4px);
+  animation: glowing-sample-btn 20s linear infinite;
+  transition: opacity 0.5s ease-in-out;
+  border-radius: 10px;
+}
+
+@keyframes glowing-sample-btn {
+  0% {
+    background-position: 0 0;
+  }
+  50% {
+    background-position: 400% 0;
+  }
+  100% {
+    background-position: 0 0;
+  }
+}
+
+.sample-btn:after {
+  z-index: -1;
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: #222;
+  left: 0;
+  top: 0;
+  border-radius: 10px;
+}
+
+.hidden {
+    display: none;
+}
+
+.disease-info {
+
+}
+
+.renal-info {
+
+}
+
+.bone-marrow-info {
+
+}
+
