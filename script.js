@@ -24,6 +24,7 @@ function generateDiseaseAssociated () {
     diseaseImg.src = "./images/disease.jpg";
     
     const a = document.createElement("a");
+    a.target = "_blank";
     a.href = "https://lrc.hrlmp.ca/uploaded/R_HLA%20DNA%20TYPING%20QUESTIONNAIRE%2008sep14.pdf";
     a.innerText = "Click for Requisition";
     a.classList.add("disease-req");
@@ -97,9 +98,13 @@ function generateBoneMarrow () {
     Initial Typing --> Secondary Typing\n
     Initial Antibody ID --> Pre-Tx Antibody ID
     (Minimum 3x EDTA for Typing, 1x serum for Antibody ID\n
+
     Extraction Notes:\n 
+    For all recipients extract 2x volume\n
     Recipient WBC is Important!\n
-    If WBC low: use 10mL EDTA\n
+    If WBC normal: use 5mL EDTA, 15mL RBC lysis, 150 robot protocol\n
+    If WBC low: use 10mL EDTA, 30mL RBC lysis, 300 robot protocol\n
+    If WBC high: use 5mL EDTA, 15mL RBC lysis, 75 robot protocol
     `;
     bmDiv.classList.add("renal-requirements");
 
@@ -109,10 +114,17 @@ function generateBoneMarrow () {
     bmDonorHeader.innerText = "Donors";
     const bmExtractionDiv = document.createElement("div");
     bmExtractionDiv.innerText = 
-    `Bone Marrow Donors:\n
-    Donors & Recipients ---> 200ul\n
+    `Prior to Tx each donor must have:\n
+    Initial Typing --> Secondary Typing\n
+    Typing Orders:\n
+    Sibling (1 0f 1) --> A,B,C,DR,DQ\n
+    Sibling (n of n) --> A,B,C\n
+    Child/Parent --> A,B,C,DR,DQ\n
+    UBMD -->\n 
+    Extraction Notes:\n
+    For UBMDs extract 2x volume
     Minimum Optical Density ---> 20ng/ul\n
-    Accepatable Sample Types ---> EDTA, ACD, Spleen (Deceased Donor)`
+    Accepatable Sample Types ---> EDTA, Buccal Swab`
     bmExtractionDiv.classList.add("extract");
 
     gridRightContent.appendChild(bmImg);
@@ -134,6 +146,7 @@ function returnHome () {
     const a = document.createElement("a");
     a.classList.add("ashi");
     a.innerText = "ASHI";
+    a.target = "_blank";
     a.href = "https://www.ashi-hla.org/";
     gridRightContent.classList.add("grid-right");
     gridRightContent.appendChild(homeContainer);
