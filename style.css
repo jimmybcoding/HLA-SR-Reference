@@ -208,6 +208,7 @@ body {
   color: white;
   box-shadow: 5px 10px #222;
   transition: box-shadow 1s ease;
+  margin-left: 0;
 
 }
 
@@ -222,17 +223,17 @@ body {
   background-color: hotpink;
   display: grid;
   grid-template-columns: 1fr 2fr;
-  grid-template-rows: 1fr 1fr 0.25fr;
+  grid-template-rows: 1fr 1fr 1fr;
   row-gap: 25px;
   grid-template-areas:
   "main image"
   "extract image"
-  ". .";
+  ". image";
 }
 
 .bone-marrow-pic {
   grid-area: image;
-  animation: bm-slide 20s infinite;
+  animation: bm-slide 10s infinite;
   border-radius: 12px;
 }
 
